@@ -26,7 +26,7 @@ $(document).ready(function() {
     
     /* ======= Countdown ========= */
 	// set the date we're counting down to
-    var target_date = new Date("July 16, 2018").getTime();
+    var target_date = new Date("September 15, 2018").getTime();
      
     // variables for time units
     var days, hours, minutes, seconds;
@@ -64,10 +64,10 @@ $(document).ready(function() {
         seconds = parseInt(seconds_left % 60);
          
         // format countdown string + set tag value.
-        days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit script">Days</span>';
-        hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Hrs</span>';
-        minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit script">Mins</span>';
-        secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Secs</span>';
+        days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit script">Dagar</span>';
+        hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Tim</span>';
+        minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit script">Min</span>';
+        secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Sek</span>';
         
       
         //countdown.innerHTML = days + "d, " + hours + "h, "
