@@ -1,0 +1,12 @@
+{
+  "name": "OlofEvelyn",
+  "version": "1.0.0",
+  "license": "GPL",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}
