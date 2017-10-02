@@ -85,6 +85,7 @@ $(document).ready(function() {
     
     var iconBasePath = '/assets/images/',
         weddingIcon = iconBasePath+'marker-rings.png',
+        partyIcon = iconBasePath+'marker-party.png',
         hotelIcon = iconBasePath+'marker-hotel.png',
         busIcon = iconBasePath+'marker-bus.png',
         trainIcon = iconBasePath+'marker-train.png',
@@ -158,14 +159,30 @@ $(document).ready(function() {
         <div>Följ anvisningar för att hitta till vigselplatsen.</div>';
 
     var activeInfo = null;
-        
-    createMarker('Gamla Övre Fabriken', { lat: 57.818318, lng: 12.419915 }, weddingIcon, weddingContent, true);
+
+    createMarker('Gamla Övre Fabriken', { lat: 57.818200, lng: 12.420220 }, weddingIcon, weddingContent, true);
+    createMarker('Gamla Övre Fabriken', { lat: 57.818318, lng: 12.419915 }, partyIcon, weddingContent);
     createMarker('Nääs Fabriker', { lat: 57.8199187, lng: 12.4167683 }, hotelIcon, hotel1Content);
     createMarker('Tollereds Hotell', { lat: 57.818593, lng: 12.4206548 }, hotelIcon, hotel2Content);
     createMarker('Nääs Slott', { lat: 57.8163351, lng: 12.4013127 }, hotelIcon, hotel3Content);
     createMarker('Herreslia - Buss', { lat: 57.817943, lng: 12.4205925 }, busIcon, busContent);
     createMarker('Floda Station - Pendeltåg', { lat: 57.8100649, lng: 12.3613318 }, trainIcon, trainContent);
-    createMarker('Parkering', {lat: 57.818768, lng: 12.417407 }, parkIcon, parkContent);
+    createMarker('Parkering', { lat: 57.818768, lng: 12.417407 }, parkIcon, parkContent);
+
+    createLine([
+        { lat: 57.818770, lng: 12.417490 }, 
+        { lat: 57.819271, lng: 12.418724 }, 
+        { lat: 57.818790, lng: 12.419735 }, 
+        { lat: 57.818495, lng: 12.420002 }, 
+        { lat: 57.818350, lng: 12.420120 }
+    ]);
+
+    createLine([
+        { lat: 57.817943, lng: 12.4205925 },
+        { lat: 57.818044, lng: 12.420587 },
+        { lat: 57.818134, lng: 12.420233 },
+        { lat: 57.818218, lng: 12.420210 },
+    ]);
 
     function createMarker(title, position, icon, content, isMain) {
         var infoWindow = new google.maps.InfoWindow({ content: content });
@@ -194,27 +211,28 @@ $(document).ready(function() {
 
         return marker;
     }
-    
-    // TODO
-    // var lineSymbol = {
-    //       path: 'M 0,-1 0,1',
-    //       strokeOpacity: 1,
-    //       scale: 4
-    //     };
 
-    //     // Create the polyline, passing the symbol in the 'icons' property.
-    //     // Give the line an opacity of 0.
-    //     // Repeat the symbol at intervals of 20 pixels to create the dashed effect.
-    //     var line = new google.maps.Polyline({
-    //       path: [{lat: 57.817943, lng: 12.4205925}, {lat: 59.817943, lng: 12.4205925}],
-    //       strokeOpacity: 0,
-    //       icons: [{
-    //         icon: lineSymbol,
-    //         offset: '0',
-    //         repeat: '20px'
-    //       }],
-    //       map: map
-    //     });
+    function createLine(path) {
+
+        var lineSymbol = {
+            path: 'M 0, -1 0,1',
+            strokeOpacity: 1,
+            scale: 2
+        };
+
+        var line = new google.maps.Polyline({
+            path: path,
+            strokeOpacity: 0,
+            icons: [{
+                icon: lineSymbol,
+                offset: '0%',
+                repeat: '15px'
+            }],
+            map: map
+        });
+
+        return line;
+    }
 
     
     /* ===== Packery ===== */
