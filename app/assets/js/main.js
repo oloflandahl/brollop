@@ -26,7 +26,7 @@ $(document).ready(function() {
     
     /* ======= Countdown ========= */
 	// set the date we're counting down to
-    var target_date = new Date("August 4, 2018").getTime();
+    var target_date = new Date("2018-08-04 15:00").getTime();
      
     // variables for time units
     var days, hours, minutes, seconds;
