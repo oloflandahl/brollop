@@ -249,6 +249,26 @@ $(document).ready(function() {
         });
     });
     
+
+    $('#swish, #ica').on('click', function(e) {
+        e.preventDefault();
+        try {
+            $(this).find('.number + input').select();
+            var successful = document.execCommand('copy');
+            if (successful) {
+                showCopySuccess($(this));
+            }
+        } 
+        catch (err) {}
+    });
+
+    function showCopySuccess($el) {
+        var $message = $el.siblings('.copy-message');
+        $message.addClass('in');
+        setTimeout(function() {
+            $message.removeClass('in');
+        }, 2000);
+    }
     
     /* ======= RSVP Form (Dependent form field) ============ */
     $('#cguests').on("change", function(){
