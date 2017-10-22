@@ -21,3 +21,21 @@
   margin: 20px 0;
   text-align: left;
 }
+
+.wedding-section .action-wrapper {
+  margin-bottom: 50px;
+}
+
+#contact {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+#contact ul {
+  margin: 0;
+  padding: 0;
+}
+
+#contact ul li {
+  list-style: none;
+}

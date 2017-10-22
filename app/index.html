@@ -108,6 +108,9 @@
                                 <span class="direction-info display-block list-link"><a href="#" data-toggle="modal" data-target="#direction-modal">Vägbeskrivning</a></span>
                             </li>
                         </ul><!--//meta-list-->
+                        <div class="reception-info">
+                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta oss eller värdparet.
+                        </div>
                     </div><!--//col-inner-->
                 </div><!--//ceremony-col-->
                 <div class="reception-col col-xs-12 col-sm-6">
@@ -124,17 +127,7 @@
                         </ul><!--//meta-list-->
                         <div class="reception-info">
                             Om du vill hålla tal eller underhålla på annat vis under middagen, kontakta toastmaster.<br />
-                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta värdparet eller oss.
-                        </div>
-                        <div class="reception-info">
-                            <h4>Toastmaster</h4>
-                            Hannes Larsson, 0701-23 45 67, hanneslarsson@gmail.com
-                            <h4>Värdpar</h4>
-                            Paul Pujich, 0701-23 45 67, palle@gmail.com<br/>
-                            Madeleine Hoo, 0701-23 45 67, madde@gmail.com
-                            <h4>Brudpar</h4>
-                            Olof Landahl, 0701-46 20 49, oloflandahl@gmail.com<br/>
-                            Evelyn Jensen, 0735-12 34 46, evelyn.m.jensen@gmail.com
+                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta oss eller värdparet.
                         </div>
                     </div><!--//col-inner-->
                 </div><!--//ceremony-col-->
@@ -143,6 +136,20 @@
             <div class="action-wrapper">
                 <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#rsvp-modal">Anmälan</a>
             </div><!--//action-wrapper-->
+
+            <div id="contact">
+                <ul>
+                    <li>
+                        <h4>Toastmaster</h4> <b>Hannes Larsson</b>, 0701-23 45 67, <a href="mailto:hanneslarsson@gmail.com">hanneslarsson@gmail.com</a>
+                    </li>
+                    <li>
+                        <h4>Värdpar</h4> <b>Paul Pujich</b> 0701-23 45 67 <a href="mailto:palle@gmail.com">palle@gmail.com</a> | <b>Madelejne Hou</b> 0701-23 45 67 <a href="mailto:madde@gmail.com">madde@gmail.com</a>
+                    </li>
+                    <li>
+                        <h4>Brudpar</h4> <b>Olof Landahl</b> 0701-46 20 49 <a href="mailto:oloflandahl@gmail.com">oloflandahl@gmail.com</a> | <b>Evelyn Jensen</b> 0735-12 34 46 <a href="mailto:evelyn.m.jensen@gmail.com">evelyn.m.jensen@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
             
         </div><!--//container-->
         <div id="map" class="map-container">
@@ -291,75 +298,75 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h2 id="rsvpModalLabel" class="modal-title text-center">
                         <span class="title script display-block"><span class="title-deco-left"></span><span class="title-text">Anmälan</span><span class="title-deco-right"></span></span>
-                        <span class="subtitle display-block">Come and celebrate with us! <br> Please RSVP by May 16, 2016</span>
+                        <span class="subtitle display-block">Kom och fira med oss! <br> O.S.A. senast 1 April 2018</span>
                     </h2>
                     
                 </div><!--//modal-header-->
                 <div class="modal-body">
-                    <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">     
+                    <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">
                         <div id="form-messages" class="text-center"></div>                  
                         <div class="row text-left">   
                             <div class="name-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cname">Name</label>
-                                    <input type="text" class="form-control" id="cname" name="name" placeholder="Your full name" minlength="2"  aria-required="true" required>
+                                    <label for="cname">Namn</label>
+                                    <input type="text" class="form-control" id="cname" name="name" placeholder="För- och efternamn" minlength="2"  aria-required="true" required>
                                 </div>
                             </div>                    
                             <div class="email-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cemail">Email</label>
-                                    <input type="email" class="form-control" id="cemail" name="email" placeholder="Your email address" aria-required="true" required>
+                                    <label for="cemail">E-post</label>
+                                    <input type="email" class="form-control" id="cemail" name="email" placeholder="Din epostadress" aria-required="true" required>
                                 </div>
                             </div>
                             
                             <div class="events-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cevents">Which events are you attending?</label>
+                                    <label for="cevents">Vilka tillställningar kommer du/ni på?</label>
                                     <select class="form-control" id="cevents" name="events" aria-required="true" required>                       
-                                        <option value="" selected>Please select</option> 
-                                        <option value="Ceremony and Reception">Ceremony and Reception</option>
-                                        <option value="Ceremony Only">Ceremony Only</option>
-                                        <option value="Reception Only">Reception Only</option>
-                                        <option value="Sorry, can't make either">Sorry, can't make either</option>
+                                        <option value="" selected>Välj...</option> 
+                                        <option value="Vigsel och middag">Vigsel och middag</option>
+                                        <option value="Endast vigsel">Endast vigsel</option>
+                                        <option value="Endast middag">Endast middag</option>
+                                        <option value="Tyvärr, jag/vi kan inte komma">Tyvärr, jag/vi kan inte komma</option>
                                     </select>     
                                 </div>       
                             </div>      
                             
                             <div class="guests-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cguests">How many guests are you bringing?</label>
+                                    <label for="cguests">Hur många fler är i ert sällskap?</label>
                                     <select class="form-control" id="cguests" name="guests" aria-required="true" required>
-                                        <option value="" selected>Please select</option>
-                                        <option value="No Guests">No Guests</option>
-                                        <option value="1 Guest">1 Guest</option>
-                                        <option value="2 Guests">2 Guests</option>
-                                        <option value="3 Guests">3 Guests</option>
-                                        <option value="4 Guests">4 Guests</option>
-                                        <option value="5 Guests">5 Guests</option>
+                                        <option value="" selected>Välj...</option>
+                                        <option value="Ingen">Ingen</option>
+                                        <option value="1 person">1 person</option>
+                                        <option value="2 personer">2 personer</option>
+                                        <option value="3 personer">3 personer</option>
+                                        <option value="4 personer">4 personer</option>
+                                        <option value="5 personer">5 personer</option>
                                     </select>   
                                 </div>    
                             </div>         
                             
                             <div class="guestinfo-group form-group col-xs-12" style="display:none">
                                 <div class="form-group-inner">
-                                    <label for="cguestinfo">Guest(s) Name(s)</label>
-                                    <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Please provide full name(s)" required></textarea>
+                                    <label for="cguestinfo">Gästernas namn</label>
+                                    <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Skriv ner namn på övriga gäster" required></textarea>
                                 </div>
                             </div>                                                   
                             
                             <div class="message-group form-group col-xs-12">
                                 <div class="form-group-inner">
-                                    <label for="cmessage">Additional Information</label>
-                                    <textarea class="form-control" id="cmessage" name="message" placeholder="eg. Vegetarian &amp; dietary requests"></textarea>
+                                    <label for="cmessage">Ytterligare information</label>
+                                    <textarea class="form-control" id="cmessage" name="message" placeholder="t.ex. allergier"></textarea>
                                 </div>
                             </div>
                             
                              <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-block btn-primary">Skicka</button>
                             </div>   
                             
                             <div class="additional-info text-center col-xs-12">
-                                If you have any questions please let us know. You can either email us at <a href="#">amynickwedding@gmail.com</a> or give us a ring at 0133 123455
+                                För allmäna frågor, använd kommentarsfältet längst ner på sidan, annars kan ni kontakta oss eller värdparet. Kontaktuppgifter hittar du på sidan.
                             </div><!--//notes-->    
                                        
                         </div><!--//row-->
