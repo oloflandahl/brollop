@@ -76,6 +76,13 @@ $(document).ready(function() {
     }, 1000);
      
 
+    $('.map-link').click(function(e) {
+        $('#direction-modal').modal('hide');
+        $('html, body').animate({
+            scrollTop: $('#map').offset().top - 100
+        }, 1000);
+    });
+
     /* ======= Google Map ======= */
     var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 57.8189274, lng: 12.4191691 },
@@ -85,11 +92,13 @@ $(document).ready(function() {
     
     var iconBasePath = '/assets/images/',
         weddingIcon = iconBasePath+'marker-rings.png',
+        altWeddingIcon = iconBasePath+'marker-rings-2.png',
         partyIcon = iconBasePath+'marker-party.png',
         hotelIcon = iconBasePath+'marker-hotel.png',
         busIcon = iconBasePath+'marker-bus.png',
         trainIcon = iconBasePath+'marker-train.png',
         parkIcon = iconBasePath+'marker-park.png',
+        altParkIcon = iconBasePath+'marker-park-2.png',
         footstepsIcon = iconBasePath+'marker-footsteps.png';
 
     var weddingContent = '\
@@ -97,6 +106,19 @@ $(document).ready(function() {
         <h4 class="map-title script">Gamla Övre Fabriken</h4>\
         <div class="address">\
             <span class="region">JT Bergsväg 16</span>\
+            <br>\
+            <span class="postal-code">448 50</span>\
+            <br>\
+            <span class="city-name">Tollered</span>\
+        </div>';
+
+    var altWeddingContent = '\
+        <div class="note">Alternativ vigselplats</div>\
+        <h4 class="map-title script">Tollereds dansbana</h4>\
+        <div>Om vädret inte tillåter vigsel utomhus är detta den den alternativa vigselplatsen.</div>\
+        <br />\
+        <div class="address">\
+            <span class="region">Tollereds Ströms väg 4</span>\
             <br>\
             <span class="postal-code">448 50</span>\
             <br>\
@@ -158,9 +180,14 @@ $(document).ready(function() {
         <div class="note">Stor parkering</div>\
         <div>Följ anvisningar för att hitta till vigselplatsen.</div>';
 
+    var altParkContent = '\
+        <div class="note">Alternativ parkering</div>\
+        <div>Om vädret inte tillåter vigsel utomhus är detta den parkeringsplats som ligger närmast alternativ vigselplats.</div>';
+
     var activeInfo = null;
 
     createMarker('Gamla Övre Fabriken', { lat: 57.818200, lng: 12.420220 }, weddingIcon, weddingContent, true);
+    createMarker('Tollereds Dansbana', { lat: 57.813904, lng: 12.422564 }, altWeddingIcon, altWeddingContent);
     createMarker('Gamla Övre Fabriken', { lat: 57.818318, lng: 12.419915 }, partyIcon, weddingContent);
     createMarker('Nääs Fabriker', { lat: 57.8199187, lng: 12.4167683 }, hotelIcon, hotel1Content);
     createMarker('Tollereds Hotell', { lat: 57.818593, lng: 12.4206548 }, hotelIcon, hotel2Content);
@@ -168,6 +195,7 @@ $(document).ready(function() {
     createMarker('Herreslia - Buss', { lat: 57.817943, lng: 12.4205925 }, busIcon, busContent);
     createMarker('Floda Station - Pendeltåg', { lat: 57.8100649, lng: 12.3613318 }, trainIcon, trainContent);
     createMarker('Parkering', { lat: 57.818768, lng: 12.417407 }, parkIcon, parkContent);
+    createMarker('Alternativ Parkering', { lat: 57.815080, lng: 12.423788 }, altParkIcon, altParkContent);
 
     createLine([
         { lat: 57.818770, lng: 12.417490 }, 
