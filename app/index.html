@@ -93,13 +93,13 @@
         <div class="container text-center">
             <h3 class="title script"><span class="title-deco-left"></span><span class="title-text">Bröllopet</span><span class="title-deco-right"></span></h3>
             <div id="countdown-box" class="countdown-box">
-                
             </div><!--//countdown-box-->
+
             <div class="row cols-wrapper">
                 <div class="ceremony-col col-xs-12 col-sm-6">
                     <div class="col-inner">
                         <h4 class="subtitle">Vigsel</h4>
-                        <p class="intro">Vi kommer vigas utomhus, vid Nääs Fabriker i Tollered<br /><i><small>(Om vädret inte tillåter att vara utomhus finns en alternativ vigselplats i närheten. Håll utkik här på hemsidan dagarna innan)</i></small></p>
+                        <p class="intro">Vi kommer vigas utomhus, vid Nääs Fabriker i Tollered<br /><i>(Om vädret inte tillåter att vara utomhus finns en alternativ vigselplats i närheten. Håll utkik här på hemsidan dagarna innan)</i></p>
                         <ul class="meta-list list-unstyled text-left center-block">
                             <li><span class="icon-calendar love-icon"></span>Lördag - 4 Augusti, 2018</li>
                             <li><span class="icon-clock love-icon"></span>15:00 - 17:00</li>
@@ -108,15 +108,15 @@
                                 <span class="direction-info display-block list-link"><a href="#" data-toggle="modal" data-target="#direction-modal">Vägbeskrivning</a></span>
                             </li>
                         </ul><!--//meta-list-->
-                        <div class="reception-info">
-                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta oss eller värdparet.
+                        <div class="info">
+                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta brudparet eller värdparet.
                         </div>
                     </div><!--//col-inner-->
                 </div><!--//ceremony-col-->
-                <div class="reception-col col-xs-12 col-sm-6">
+                <div class="reception-col col-xs-12 col-sm-6 hide-for-ceremony">
                     <div class="col-inner">
                         <h4 class="subtitle">Middag & Fest</h4>
-                        <p class="intro">Middag och fest hålls vid Nääs Fabriker, i Gamla Övre Fabriken.<br /><i>Vi tycker om era barn men denna kväll tycker vi om era barnvakter mer.</i></p>
+                        <p class="intro">Middag och fest hålls vid Nääs Fabriker, i Gamla Övre Fabriken.</p>
                         <ul class="meta-list list-unstyled text-left center-block">
                             <li><span class="icon-calendar love-icon"></span>Lördag - 4 Augusti, 2018</li>
                             <li><span class="icon-clock love-icon"></span>18:00 - sent</li>
@@ -125,9 +125,10 @@
                                 <span class="direction-info display-block list-link"><a href="#" data-toggle="modal" data-target="#direction-modal">Vägbeskrivning</a></span>
                             </li>
                         </ul><!--//meta-list-->
-                        <div class="reception-info">
-                            Om du vill hålla tal eller underhålla på annat vis under middagen, kontakta toastmaster.<br />
-                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta oss eller värdparet.
+                        <div class="info">
+                            Vi tycker om era barn men denna kväll tycker vi om era barnvakter mer. (Barn är välkomna på vigseln).<br /><br />
+                            Om du vill hålla tal eller underhålla på annat vis under middagen, kontakta toastmaster.<br /><br />
+                            För allmäna frågor, använd <a>kommentarsfältet längst ner på sidan</a>, annars kan ni kontakta brudparet eller värdparet.
                         </div>
                     </div><!--//col-inner-->
                 </div><!--//ceremony-col-->
@@ -137,9 +138,20 @@
                 <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#rsvp-modal">Anmälan</a>
             </div><!--//action-wrapper-->
 
-            <div id="contact">
+            <div id="general-info" class="info-list">
                 <ul>
-                    <li>
+                    <li class="extra-space">
+                        <h4>Klädsel</h4> Något du känner dig fin i
+                    </li>
+                    <li class="hide-for-ceremony">
+                        <h4>Övernattning</h4> Det finns några alternativ för er som vill bo på hotell i närheten. Klicka på alternativen i <a class="map-link" href="#map">kartan</a> för mer info.
+                    </li>
+                </ul>
+            </div>
+
+            <div id="contact" class="info-list">
+                <ul>
+                    <li class="hide-for-ceremony">
                         <h4>Toastmaster</h4> <b>Hannes Larsson</b>, 0701-23 45 67, <a href="mailto:hanneslarsson@gmail.com">hanneslarsson@gmail.com</a>
                     </li>
                     <li>
@@ -321,28 +333,28 @@
                             
                             <div class="events-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cevents">Vilka tillställningar kommer du/ni på?</label>
-                                    <select class="form-control" id="cevents" name="events" aria-required="true" required>                       
+                                    <label for="cevents">Kommer du/ni?</label>
+                                    <select class="form-control" id="cevents" name="events" aria-required="true" required> 
                                         <option value="" selected>Välj...</option> 
-                                        <option value="Vigsel och middag">Vigsel och middag</option>
+                                        <option value="Vigsel och middag" class="hide-for-ceremony">Vigsel och middag</option>
                                         <option value="Endast vigsel">Endast vigsel</option>
-                                        <option value="Endast middag">Endast middag</option>
+                                        <option value="Endast middag" class="hide-for-ceremony">Endast middag</option>
                                         <option value="Tyvärr, jag/vi kan inte komma">Tyvärr, jag/vi kan inte komma</option>
                                     </select>     
                                 </div>       
                             </div>      
                             
-                            <div class="guests-group form-group col-xs-12 col-sm-6">
+                            <div class="guests-group form-group col-xs-12 col-sm-6" style="display: none">
                                 <div class="form-group-inner">
                                     <label for="cguests">Hur många fler är i ert sällskap?</label>
                                     <select class="form-control" id="cguests" name="guests" aria-required="true" required>
                                         <option value="" selected>Välj...</option>
                                         <option value="Ingen">Ingen</option>
-                                        <option value="1 person">1 person</option>
-                                        <option value="2 personer">2 personer</option>
-                                        <option value="3 personer">3 personer</option>
-                                        <option value="4 personer">4 personer</option>
-                                        <option value="5 personer">5 personer</option>
+                                        <option value="1">1 person</option>
+                                        <option value="2">2 personer</option>
+                                        <option value="3">3 personer</option>
+                                        <option value="4">4 personer</option>
+                                        <option value="5">5 personer</option>
                                     </select>   
                                 </div>    
                             </div>         
@@ -352,7 +364,14 @@
                                     <label for="cguestinfo">Gästernas namn</label>
                                     <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Skriv ner namn på övriga gäster" required></textarea>
                                 </div>
-                            </div>                                                   
+                            </div>
+
+                            <div class="reception-group form-group col-xs-12" style="display:none">
+                                <div class="form-group-inner">
+                                    <label for="creceptioninfo">Favoritpartylåt</label>
+                                    <input class="form-control" id="creceptioninfo" name="receptioninfo" placeholder="Artist- och låtnamn alt. spotify-länk" />
+                                </div>
+                            </div>                                              
                             
                             <div class="message-group form-group col-xs-12">
                                 <div class="form-group-inner">
@@ -366,7 +385,7 @@
                             </div>   
                             
                             <div class="additional-info text-center col-xs-12">
-                                För allmäna frågor, använd kommentarsfältet längst ner på sidan, annars kan ni kontakta oss eller värdparet. Kontaktuppgifter hittar du på sidan.
+                                För allmäna frågor, använd kommentarsfältet längst ner på sidan, annars kan ni kontakta brudparet eller värdparet. Kontaktuppgifter hittar du på sidan.
                             </div><!--//notes-->    
                                        
                         </div><!--//row-->

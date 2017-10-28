@@ -1,5 +1,11 @@
+
 $(document).ready(function() {
    
+    var showCeremonyOnly = location.search.replace('?', '') === 'vigsel';
+    if (showCeremonyOnly) {
+        $('body').addClass('hide-reception');
+    }
+
     /* ======= Scrollspy ======= */
     $('body').scrollspy({ target: '#header', offset: 100});
     
@@ -102,7 +108,6 @@ $(document).ready(function() {
         footstepsIcon = iconBasePath+'marker-footsteps.png';
 
     var weddingContent = '\
-        <div class="note">Vigsel & Fest</div>\
         <h4 class="map-title script">Gamla Övre Fabriken</h4>\
         <div class="address">\
             <span class="region">JT Bergsväg 16</span>\
@@ -111,6 +116,9 @@ $(document).ready(function() {
             <br>\
             <span class="city-name">Tollered</span>\
         </div>';
+
+    var ceremonyContent = '<div class="note">Vigsel</div>'+weddingContent;
+    var receptionContent = '<div class="note">Middag & Fest</div>'+weddingContent;
 
     var altWeddingContent = '\
         <div class="note">Alternativ vigselplats</div>\
@@ -186,16 +194,19 @@ $(document).ready(function() {
 
     var activeInfo = null;
 
-    createMarker('Gamla Övre Fabriken', { lat: 57.818200, lng: 12.420220 }, weddingIcon, weddingContent, true);
+    createMarker('Gamla Övre Fabriken', { lat: 57.818200, lng: 12.420220 }, weddingIcon, ceremonyContent, true);
     createMarker('Tollereds Dansbana', { lat: 57.813904, lng: 12.422564 }, altWeddingIcon, altWeddingContent);
-    createMarker('Gamla Övre Fabriken', { lat: 57.818318, lng: 12.419915 }, partyIcon, weddingContent);
-    createMarker('Nääs Fabriker', { lat: 57.8199187, lng: 12.4167683 }, hotelIcon, hotel1Content);
-    createMarker('Tollereds Hotell', { lat: 57.818593, lng: 12.4206548 }, hotelIcon, hotel2Content);
-    createMarker('Nääs Slott', { lat: 57.8163351, lng: 12.4013127 }, hotelIcon, hotel3Content);
     createMarker('Herreslia - Buss', { lat: 57.817943, lng: 12.4205925 }, busIcon, busContent);
     createMarker('Floda Station - Pendeltåg', { lat: 57.8100649, lng: 12.3613318 }, trainIcon, trainContent);
     createMarker('Parkering', { lat: 57.818768, lng: 12.417407 }, parkIcon, parkContent);
     createMarker('Alternativ Parkering', { lat: 57.815080, lng: 12.423788 }, altParkIcon, altParkContent);
+
+    if (!showCeremonyOnly) {
+        createMarker('Gamla Övre Fabriken', { lat: 57.818318, lng: 12.419915 }, partyIcon, receptionContent);
+        createMarker('Nääs Fabriker', { lat: 57.8199187, lng: 12.4167683 }, hotelIcon, hotel1Content);
+        createMarker('Tollereds Hotell', { lat: 57.818593, lng: 12.4206548 }, hotelIcon, hotel2Content);
+        createMarker('Nääs Slott', { lat: 57.8163351, lng: 12.4013127 }, hotelIcon, hotel3Content);
+    }
 
     createLine([
         { lat: 57.818770, lng: 12.417490 }, 
@@ -300,22 +311,38 @@ $(document).ready(function() {
     
     /* ======= RSVP Form (Dependent form field) ============ */
     $('#cguests').on("change", function(){
-        
-        if ($(this).val() == "") {
-            $('.guestinfo-group').slideUp(); //hide
-            console.log('not selected');
-        } else if ($(this).val() == 'No Guests' ) {
-            $('.guestinfo-group').slideUp(); //hide
-            console.log('No guests');
-            $('#cguestinfo').val('No Guests'); //Pass data to the field so mailer.php can send the form.
-            
+        var selectedVal = $(this).val();
+        var $guestContent = $('#rsvp-form .guestinfo-group');
+        var $guestInput = $('#rsvp-form #cguestinfo');
+
+        if (selectedVal === "") {
+            $guestContent.slideUp(); //hide
+        } else if (selectedVal === 'Ingen' ) {
+            $guestContent.slideUp(); //hide
+            $guestInput.val(selectedVal); //Pass data to the field so mailer.php can send the form.
         } else {
-            $('.guestinfo-group').slideDown(); //show
-            $('#cguestinfo').val(''); //Clear data
-            console.log('Has guests');
+            $guestContent.slideDown(); //show
+            $guestInput.val(''); //Clear data
+        }
+    });
+
+    $('#cevents').on("change", function(){
+        var $recContent = $('#rsvp-form .reception-group');
+        var $guestContent = $('#rsvp-form .guests-group');
+        var selectedVal = $(this).val();
+
+        if (selectedVal.indexOf('middag') >= 0) {
+            $recContent.slideDown(); //show
+        } else {
+            $recContent.slideUp(); //hide
+            $recContent.find(':input').val('');
         }
 
-       
+        if (selectedVal === '' || selectedVal.indexOf('kan inte komma') >= 0) {
+            $guestContent.slideUp(); //hide
+        } else {
+            $guestContent.slideDown(); //show
+        }
     });
     
     /* ======= jQuery form validator ======= */ 
@@ -323,19 +350,19 @@ $(document).ready(function() {
     $(".rsvp-form").validate({
 		messages: {
 		    name: {
-    			required: 'Please enter your full name' //You can customise this message
+    			required: 'Skriv in ditt för- och efternamn' //You can customise this message
 			},
 			email: {
-				required: 'Please enter your email' //You can customise this message
+				required: 'Fyll i din epostadress' //You can customise this message
 			},
 			events: {
-				required: 'Are you attending?' //You can customise this message
+				required: 'Kommer du/ni?' //You can customise this message
 			},
 			guests: {
-				required: 'How many guests?' //You can customise this message
+				required: 'Hur många fler är i ditt sällskap?' //You can customise this message
 			},
 			guestinfo: {
-				required: 'Please provide name(s)' //You can customise this message
+				required: 'Fyll i namn på alla i ditt sällskap' //You can customise this message
 			},
 		}
 	});

@@ -17,7 +17,7 @@
   margin: 15px 0;
 }
 
-#wedding .reception-info {
+#wedding .info {
   margin: 20px 0;
   text-align: left;
 }
@@ -26,16 +26,32 @@
   margin-bottom: 50px;
 }
 
-#contact {
+.info-list {
   margin-bottom: 50px;
   text-align: left;
 }
 
-#contact ul {
+.info-list ul {
   margin: 0;
   padding: 0;
 }
 
-#contact ul li {
+.info-list ul li {
   list-style: none;
+}
+
+.info-list ul li.extra-space {
+  margin-bottom: 20px;
+}
+
+body.hide-reception .hide-for-ceremony {
+  display: none;
+}
+
+body.hide-reception #wedding .ceremony-col {
+  width: 100%;
+}
+
+body.hide-reception #wedding .ceremony-col .info {
+  text-align: center;
 }
