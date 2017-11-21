@@ -149,6 +149,8 @@ $(document).ready(function() {
         <div>Dubbelrum fr 1100:-</div>\
         <div>Finns även 1-, 3- och 4-bäddsrum</div>\
         <br>\
+        <div>Vi har bokat upp alla rummen. Kolla med oss om ni vill övernatta här.</div>\
+        <br>\
         <div>\
             <a href="http://www.tolleredshotell.se/Våra%20rum.html" target="_blank">Hemsida</a>\
         </div>';

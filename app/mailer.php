@@ -49,9 +49,15 @@
         $email_content .= "Email: $email <br><br>";
         $email_content .= "Kommer på: $events <br><br>";
         $email_content .= "Antal extra: $guests <br>";
-        $email_content .= "Extra namn: $guestinfo <br><br>";
-        $email_content .= "Favoritpartylåt: $receptioninfo <br><br>";
-        $email_content .= "Meddelande:<br> $message <br>";
+        if (!empty($guestinfo)) {
+            $email_content .= "Extra namn: $guestinfo <br><br>";
+        }
+        if (!empty($receptioninfo)) {
+            $email_content .= "Favoritpartylåt: $receptioninfo <br><br>";
+        }
+        if (!empty($message)) {
+            $email_content .= "Meddelande:<br> $message <br>";
+        }
 
         // Build the email headers.
         $email_headers  = "MIME-Version: 1.0"."\r\n"; 
