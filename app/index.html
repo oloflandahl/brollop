@@ -317,7 +317,7 @@
                 <div class="modal-body">
                     <form id="rsvp-form" class="rsvp-form form" method="post" action="mailer.php">
                         <div id="form-messages" class="text-center"></div>                  
-                        <div class="row text-left">   
+                        <div id="form-fields" class="row text-left">   
                             <div class="name-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
                                     <label for="cname">Namn</label>
@@ -330,42 +330,39 @@
                                     <input type="email" class="form-control" id="cemail" name="email" placeholder="Din epostadress" aria-required="true" required>
                                 </div>
                             </div>
+
+                            <div class="guests-group form-group col-xs-12 col-sm-6">
+                                <div class="form-group-inner">
+                                    <div class="checkbox">
+                                        <label for="cguests">
+                                          <input type="checkbox" id="cguests" name="guests" /> Vill du anmäla någon mer?
+                                        </label>
+                                    </div>
+                                </div>    
+                            </div>
+
+                            <div class="form-group hidden-xs col-sm-6" style="min-height: 40px"></div>
+
+                            <div class="guestinfo-group form-group col-xs-12" style="display:none">
+                                <div class="form-group-inner">
+                                    <label for="cguestinfo">Övriga gäster</label>
+                                    <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Skriv ner namn på övriga gäster" rows="2" required></textarea>
+                                </div>
+                            </div>
                             
                             <div class="events-group form-group col-xs-12 col-sm-6">
                                 <div class="form-group-inner">
-                                    <label for="cevents">Kommer du/ni?</label>
+                                    <label id="cevents-label" for="cevents">Kommer du?</label>
                                     <select class="form-control" id="cevents" name="events" aria-required="true" required> 
                                         <option value="" selected>Välj...</option> 
                                         <option value="1 - Vigsel och middag" class="hide-for-ceremony">Vigsel och middag</option>
                                         <option value="2 - Endast vigsel">Endast vigsel</option>
                                         <option value="3 - Endast middag" class="hide-for-ceremony">Endast middag</option>
-                                        <option value="0 - Tyvärr, jag/vi kan inte komma">Tyvärr, jag/vi kan inte komma</option>
+                                        <option value="0 - Kan inte komma">Tyvärr, jag kan inte komma</option>
                                     </select>     
                                 </div>       
-                            </div>      
+                            </div>          
                             
-                            <div class="guests-group form-group col-xs-12 col-sm-6" style="display: none">
-                                <div class="form-group-inner">
-                                    <label for="cguests">Hur många fler är i ert sällskap?</label>
-                                    <select class="form-control" id="cguests" name="guests" aria-required="true" required>
-                                        <option value="" selected>Välj...</option>
-                                        <option value="Ingen">Ingen</option>
-                                        <option value="1">1 person</option>
-                                        <option value="2">2 personer</option>
-                                        <option value="3">3 personer</option>
-                                        <option value="4">4 personer</option>
-                                        <option value="5">5 personer</option>
-                                    </select>   
-                                </div>    
-                            </div>         
-                            
-                            <div class="guestinfo-group form-group col-xs-12" style="display:none">
-                                <div class="form-group-inner">
-                                    <label for="cguestinfo">Gästernas namn</label>
-                                    <textarea class="form-control" id="cguestinfo" name="guestinfo" placeholder="Skriv ner namn på övriga gäster" required></textarea>
-                                </div>
-                            </div>
-
                             <div class="reception-group form-group col-xs-12" style="display:none">
                                 <div class="form-group-inner">
                                     <label for="creceptioninfo">Favoritpartylåt</label>
@@ -376,19 +373,19 @@
                             <div class="message-group form-group col-xs-12">
                                 <div class="form-group-inner">
                                     <label for="cmessage">Ytterligare information</label>
-                                    <textarea class="form-control" id="cmessage" name="message" placeholder="t.ex. allergier"></textarea>
+                                    <textarea class="form-control" id="cmessage" name="message" placeholder="t.ex. allergier" rows="2"></textarea>
                                 </div>
                             </div>
                             
                              <div class="form-group col-xs-12">
                                 <button type="submit" class="btn btn-block btn-primary">Skicka</button>
-                            </div>   
-                            
-                            <div class="additional-info text-center col-xs-12">
-                                För allmäna frågor, använd kommentarsfältet längst ner på sidan, annars kan ni kontakta brudparet eller värdparet. Kontaktuppgifter hittar du på sidan.
-                            </div><!--//notes-->    
+                            </div>                              
                                        
                         </div><!--//row-->
+                        
+                        <div class="additional-info text-center">
+                            För allmäna frågor, använd kommentarsfältet längst ner på sidan, annars kan ni kontakta brudparet eller värdparet. Kontaktuppgifter hittar du på sidan.
+                        </div>  
                     </form><!--//rsvp-form-->
                 </div><!--//modal-body-->
             </div><!--//modal-content-->

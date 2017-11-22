@@ -313,24 +313,29 @@ $(document).ready(function() {
     
     /* ======= RSVP Form (Dependent form field) ============ */
     $('#cguests').on("change", function(){
-        var selectedVal = $(this).val();
+        var moreGuests = this.checked;
         var $guestContent = $('#rsvp-form .guestinfo-group');
         var $guestInput = $('#rsvp-form #cguestinfo');
+        var $eventsLabel = $('#rsvp-form #cevents-label');
+        var $cannotComeOption = $('#cevents option').last();
+        var cannotComeText = $cannotComeOption.text();
 
-        if (selectedVal === "") {
-            $guestContent.slideUp(); //hide
-        } else if (selectedVal === 'Ingen' ) {
-            $guestContent.slideUp(); //hide
-            $guestInput.val(selectedVal); //Pass data to the field so mailer.php can send the form.
-        } else {
+        if (moreGuests) {
             $guestContent.slideDown(); //show
+            $eventsLabel.text('Kommer ni?');
+            cannotComeText = cannotComeText.replace('jag', 'vi');
+        } else {
+            $guestContent.slideUp(); //hide
             $guestInput.val(''); //Clear data
+            $eventsLabel.text('Kommer du?');
+            cannotComeText = cannotComeText.replace('vi', 'jag');
         }
+
+        $cannotComeOption.text(cannotComeText);
     });
 
     $('#cevents').on("change", function(){
         var $recContent = $('#rsvp-form .reception-group');
-        var $guestContent = $('#rsvp-form .guests-group');
         var selectedVal = $(this).val();
 
         if (selectedVal.indexOf('middag') >= 0) {
@@ -338,12 +343,6 @@ $(document).ready(function() {
         } else {
             $recContent.slideUp(); //hide
             $recContent.find(':input').val('');
-        }
-
-        if (selectedVal === '' || selectedVal.indexOf('kan inte komma') >= 0) {
-            $guestContent.slideUp(); //hide
-        } else {
-            $guestContent.slideDown(); //show
         }
     });
     

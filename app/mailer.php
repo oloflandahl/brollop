@@ -15,14 +15,17 @@
         $receptioninfo = trim($_POST["receptioninfo"]);
         $message = trim($_POST["message"]);
 
+        $canCome = false;
+        if (!empty($events) AND substr( $events, 0, 1 ) !== "0") {
+            $canCome = true;
+        }
+
         $errorMessage = NULL;
         if ( empty($name) OR empty($email) ) {
             $errorMessage = "Du måste fylla i namn och e-post";
         } else if ( empty($events) ) {
             $errorMessage = "Du måste fylla i om du/ni kommer eller ej";
-        } else if ( substr( $events, 0, 1 ) !== "0" AND empty($guests) ) {
-            $errorMessage = "Du måste fylla i om det är fler i ert sällskap";
-        } else if ( !empty($guests) AND strlen($guests) === 1 AND empty($guestinfo) ) {
+        } else if ( $guests === true AND empty($guestinfo) ) {
             $errorMessage = "Du måste fylla i fler namn";
         }
 
@@ -74,7 +77,7 @@
             //http_response_code(200); 
             header('HTTP/1.0 200 OK');
             //You can customise this message
-            echo "Anmälan har skickats in. Vi ser väldigt mycket fram emot att fira med er.";
+            echo $canCome ? "Anmälan har skickats in. Vi ser väldigt mycket fram emot att fira med er :)" : "Anmälan har skickats in. Vad tråkigt att du/ni inte kan komma :(";
         } else {
             // Set a 500 (internal server error) response code.
             //http_response_code(500);

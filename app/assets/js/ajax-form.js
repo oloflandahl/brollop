@@ -35,6 +35,8 @@ $(function() {
 			$('#cguests').val('');
 			$('#cguestinfo').val('');
 			$('#cmessage').val('');
+
+			$('#form-fields').slideUp();
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'alter-danger' class.
