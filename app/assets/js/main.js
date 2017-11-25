@@ -32,7 +32,8 @@ $(document).ready(function() {
     
     /* ======= Countdown ========= */
 	// set the date we're counting down to
-    var target_date = new Date("2018-08-04 15:00").getTime();
+    // TODO Sätt rätt tid
+    var target_date = new Date(2018, 7, 4, 14, 0, 0).getTime();
      
     // variables for time units
     var days, hours, minutes, seconds;
@@ -51,6 +52,8 @@ $(document).ready(function() {
     var secs_span = document.createElement("SPAN");
     secs_span.className = 'secs';
     countdown.appendChild(secs_span);
+
+    var d = true;
      
     // update the tag with id "countdown" every 1 second
     setInterval(function () {
@@ -58,7 +61,7 @@ $(document).ready(function() {
         // find the amount of "seconds" between now and target
         var current_date = new Date().getTime();
         var seconds_left = (target_date - current_date) / 1000;
-     
+
         // do some time calculations
         days = parseInt(seconds_left / 86400);
         seconds_left = seconds_left % 86400;
@@ -68,14 +71,23 @@ $(document).ready(function() {
          
         minutes = parseInt(seconds_left / 60);
         seconds = parseInt(seconds_left % 60);
-         
+
         // format countdown string + set tag value.
         days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit script">Dagar</span>';
         hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Tim</span>';
         minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit script">Min</span>';
         secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Sek</span>';
         
-      
+        if (d) {
+            $debug = $('#debug');
+        $debug.append('<div>target_date = '+target_date+'</div>');
+        $debug.append('<div>current_date = '+current_date+'</div>');
+        $debug.append('<div>seconds_left = '+seconds_left+'</div>');
+        $debug.append('<div>seconds_left / 86400 = '+seconds_left / 86400+'</div>');
+        d = false;
+        }
+        
+
         //countdown.innerHTML = days + "d, " + hours + "h, "
        // + minutes + "m, " + seconds + "s";  
      
@@ -144,6 +156,7 @@ $(document).ready(function() {
             <a href="https://www.hotels.com/ho261753/naas-fabriker-hotell-och-restaurang-tollered-sweden/" target="_blank">Hotels.com</a> (kan vara billigare)\
         </div>';
 
+    // TODO Ändra text beroende på överenskommelse med hotellet
     var hotel2Content = '\
         <div class="note">Tollereds Hotell</div>\
         <div>Dubbelrum fr 1100:-</div>\
@@ -366,7 +379,6 @@ $(document).ready(function() {
 				required: 'Fyll i namn på alla i ditt sällskap' //You can customise this message
 			},
 		}
-	});
-  
+	});  
 
 });

@@ -40,9 +40,8 @@
         }
 
         // Set the recipient email address.
-        //IMPORTANT TODO: CHANGE THIS TO YOUR EMAIL ADDRESS!!
+        // TODO: CHANGE THIS TO YOUR EMAIL ADDRESS!!
         $recipient = "oloflandahl@gmail.com";
-        //$recipient = "demo3wm@hotmail.com";
 
         // Set the email subject.
         $subject = "Anmälan från $name";

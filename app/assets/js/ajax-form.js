@@ -37,6 +37,8 @@ $(function() {
 			$('#cmessage').val('');
 
 			$('#form-fields').slideUp();
+			
+    	$('#rsvp-mail').hide();
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'alter-danger' class.
