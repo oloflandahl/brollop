@@ -53,8 +53,6 @@ $(document).ready(function() {
     secs_span.className = 'secs';
     countdown.appendChild(secs_span);
 
-    var d = true;
-     
     // update the tag with id "countdown" every 1 second
     setInterval(function () {
      
@@ -77,19 +75,6 @@ $(document).ready(function() {
         hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Tim</span>';
         minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit script">Min</span>';
         secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Sek</span>';
-        
-        if (d) {
-            $debug = $('#debug');
-        $debug.append('<div>target_date = '+target_date+'</div>');
-        $debug.append('<div>current_date = '+current_date+'</div>');
-        $debug.append('<div>seconds_left = '+seconds_left+'</div>');
-        $debug.append('<div>seconds_left / 86400 = '+seconds_left / 86400+'</div>');
-        d = false;
-        }
-        
-
-        //countdown.innerHTML = days + "d, " + hours + "h, "
-       // + minutes + "m, " + seconds + "s";  
      
     }, 1000);
      
