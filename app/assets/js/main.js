@@ -357,9 +357,6 @@ $(document).ready(function() {
 			events: {
 				required: 'Kommer du/ni?' //You can customise this message
 			},
-			guests: {
-				required: 'Hur många fler är i ditt sällskap?' //You can customise this message
-			},
 			guestinfo: {
 				required: 'Fyll i namn på alla i ditt sällskap' //You can customise this message
 			},

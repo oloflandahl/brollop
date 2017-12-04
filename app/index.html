@@ -10,7 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Olof & Evelyns bröllop">
     <meta name="author" content="Olof Landahl">  
-    <meta property="fb:app_id" content="615726768439681" />  
+    <meta property="fb:app_id" content="1017532475053681" />
+    <meta property="og:url" content="https://www.olofevelyn.party" />
+    <meta property="og:title" content="Olof ❤ Evelyn" />
+    <meta property="og:description" content="Olof och Evelyns bröllop, 4 Augusti 2018" />
+    <meta property="og:image" content="https://www.olofevelyn.party/assets/images/gallery/thumb-pic-13.jpg" />
+    <meta property="og:type" content="website" />
     <!-- <link rel="shortcut icon" href="favicon.ico">   -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
@@ -35,13 +40,24 @@
 
 <body data-spy="scroll">     
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&version=v2.10&appId=615726768439681';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1017532475053681',
+          xfbml      : true,
+          version    : 'v2.11'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- ******HEADER****** --> 
     <header id="header" class="header navbar-fixed-top">  
         <div class="container ">       
@@ -256,7 +272,7 @@
             <div class="comments-container center-block">
                 <h3 class="title">Ställ frågor, planera samåkning, m.m.</h3>
                 <div class="fb-info">Ditt inlägg syns bara på denna sidan såvida du inte väljer att även publicera på Facebook.</div>
-                <div class="fb-comments" data-href="http://www.olofevelyn.com" data-width="100%" data-numposts="10" data-colorscheme="light" data-order-by="reverse_time"></div>
+                <div class="fb-comments" data-href="https://www.olofevelyn.party" data-width="100%" data-numposts="10" data-colorscheme="light" data-order-by="reverse_time"></div>
             </div>
         </div><!--//container-->
     </section><!--//comments-section-->
@@ -340,7 +356,7 @@
                                 <div class="form-group-inner">
                                     <div class="checkbox">
                                         <label for="cguests">
-                                          <input type="checkbox" id="cguests" name="guests" /> Vill du anmäla någon mer?
+                                          <input type="checkbox" id="cguests" name="guests" value="" /> Vill du anmäla någon mer?
                                         </label>
                                     </div>
                                 </div>    
@@ -441,9 +457,9 @@
     <!--//form related JS -->
     <script type="text/javascript" src="assets/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
     <!--//Google map related JS -->
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD5BaQQJ7bZ1dqvZquSUH1QxW6C8QXzqOI"></script> 
+    <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD5BaQQJ7bZ1dqvZquSUH1QxW6C8QXzqOI"></script>  -->
     <!-- TODO -->
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYT7Kc-j-4YcijYvukoK4rznYHAR2sOLM"></script> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3VPz7obYmn1XQ5ZPJNaYom3nNp0bAvJk"></script>
     <script type="text/javascript" src="assets/plugins/gmaps/gmaps.js"></script> 
     <!--//Image Gallery related JS -->
     <script type="text/javascript" src="assets/plugins/Gallery/js/jquery.blueimp-gallery.min.js"></script>

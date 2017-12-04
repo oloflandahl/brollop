@@ -10,10 +10,22 @@
         $name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $events = ($_POST["events"]);
-        $guests = ($_POST["guests"]);
-        $guestinfo = trim($_POST["guestinfo"]);
-        $receptioninfo = trim($_POST["receptioninfo"]);
         $message = trim($_POST["message"]);
+
+        $guests = "";
+        if (isset($_POST["guests"])) {
+            $guests = ($_POST["guests"]);
+        }
+
+        $guestinfo = "";
+        if (isset($_POST["guestinfo"])) {
+            $guestinfo = ($_POST["guestinfo"]);
+        }
+
+        $receptioninfo = "";
+        if (isset($_POST["receptioninfo"])) {
+            $receptioninfo = ($_POST["receptioninfo"]);
+        }
 
         $canCome = false;
         if (!empty($events) AND substr( $events, 0, 1 ) !== "0") {
@@ -25,7 +37,7 @@
             $errorMessage = "Du måste fylla i namn och e-post";
         } else if ( empty($events) ) {
             $errorMessage = "Du måste fylla i om du/ni kommer eller ej";
-        } else if ( $guests === true AND empty($guestinfo) ) {
+        } else if ( !empty($guests) AND empty($guestinfo) ) {
             $errorMessage = "Du måste fylla i fler namn";
         }
 
@@ -50,7 +62,6 @@
         $email_content = "Namn: $name <br>";
         $email_content .= "Email: $email <br><br>";
         $email_content .= "Kommer på: $events <br><br>";
-        $email_content .= "Antal extra: $guests <br>";
         if (!empty($guestinfo)) {
             $email_content .= "Extra namn: $guestinfo <br><br>";
         }
@@ -64,7 +75,7 @@
         // Build the email headers.
         $email_headers  = "MIME-Version: 1.0"."\r\n"; 
         $email_headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-        $email_headers .= "From:" .$email."\r\n";
+        $email_headers .= "From: admin@olofevelyn.party\r\n";
         $email_headers .= "Reply-To:". $email. "\r\n";
         $email_headers .= "X-Mailer: PHP/" . phpversion()."\r\n";
         $email_headers .= "X-Priority: 1"."\r\n"; 

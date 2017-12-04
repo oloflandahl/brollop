@@ -1,0 +1,4 @@
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^olofevelyn\.party$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.olofevelyn\.party$
+RewriteRule ^(.*)$ https://www.olofevelyn.party/$1 [R,L]
