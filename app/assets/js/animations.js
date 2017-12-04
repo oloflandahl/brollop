@@ -12,6 +12,10 @@ $(document).ready(function() {
         $('#wedding .title-text').css('opacity', 0).one('inview', function(event, isInView) {
             if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
         });
+
+        $('#map-section .title-text').css('opacity', 0).one('inview', function(event, isInView) {
+            if (isInView) {$(this).addClass('animated fadeInUp delayp2');}
+        });
         
         /* Animate elements in #story */
         $('#story .title-text').css('opacity', 0).one('inview', function(event, isInView) {
