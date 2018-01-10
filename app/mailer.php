@@ -38,7 +38,7 @@
         } else if ( empty($events) ) {
             $errorMessage = "Du måste fylla i om du/ni kommer eller ej";
         } else if ( !empty($guests) AND empty($guestinfo) ) {
-            $errorMessage = "Du måste fylla i fler namn";
+            $errorMessage = "Fyll i namn på alla i ditt sällskap";
         }
 
         // Check that data was sent to the mailer.
@@ -52,7 +52,6 @@
         }
 
         // Set the recipient email address.
-        // TODO: CHANGE THIS TO YOUR EMAIL ADDRESS!!
         $recipient = "evelynolof@gmail.com";
 
         // Set the email subject.

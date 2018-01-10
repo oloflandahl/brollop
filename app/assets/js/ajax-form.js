@@ -16,12 +16,12 @@ $(function() {
 		}
 
 		// Serialize the form data.
-		var formData = $(form).serialize();
+		var formData = $form.serialize();
 
 		// Submit the form using AJAX.
 		$.ajax({
 			type: 'POST',
-			url: $(form).attr('action'),
+			url: $form.attr('action'),
 			data: formData
 		})
 		.done(function(response) {
