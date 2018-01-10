@@ -55,7 +55,7 @@
         $recipient = "evelynolof@gmail.com";
 
         // Set the email subject.
-        $subject = "Anmälan från $name";
+        $subject = "Anmälan från $name . ".($canCome ? "Kommer!" : "Kan inte");
 
         // Build the email content.
         $email_content = "Namn: $name <br>";

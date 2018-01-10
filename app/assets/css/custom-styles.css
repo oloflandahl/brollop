@@ -63,3 +63,25 @@ body.hide-reception #wedding .ceremony-col .info {
 .comments-section .title {
   font-size: 20px;
 }
+
+.ceremony-col .intro, .reception-col .intro {
+  min-height: 65px;
+}
+
+.meta-list {
+  max-width: 75%;
+}
+
+.meta-list .list-link.tight {
+  font-size: 85%;
+}
+
+.love-icon.dress-icon {
+  font-size: 0px;
+}
+
+.love-icon.dress-icon img {
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/dress.svg);
+}
