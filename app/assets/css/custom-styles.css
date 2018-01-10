@@ -59,3 +59,7 @@ body.hide-reception #wedding .ceremony-col .info {
 .map-section {
     padding-top: 90px;
 }
+
+.comments-section .title {
+  font-size: 20px;
+}

@@ -33,7 +33,7 @@ $(document).ready(function() {
     /* ======= Countdown ========= */
 	// set the date we're counting down to
     // TODO Sätt rätt tid
-    var target_date = new Date(2018, 7, 4, 14, 0, 0).getTime();
+    var target_date = new Date(2018, 7, 4, 14, 30, 0).getTime();
      
     // variables for time units
     var days, hours, minutes, seconds;
@@ -141,13 +141,12 @@ $(document).ready(function() {
             <a href="https://www.hotels.com/ho261753/naas-fabriker-hotell-och-restaurang-tollered-sweden/" target="_blank">Hotels.com</a> (kan vara billigare)\
         </div>';
 
-    // TODO Ändra text beroende på överenskommelse med hotellet
     var hotel2Content = '\
         <div class="note">Tollereds Hotell</div>\
         <div>Dubbelrum fr 1100:-</div>\
         <div>Finns även 1-, 3- och 4-bäddsrum</div>\
         <br>\
-        <div>Vi har bokat upp alla rummen. Kolla med oss om ni vill övernatta här.</div>\
+        <div>Vi har bokat upp alla rummen och här kommer vi övernatta. Uppge våra namn vid bokning.</div>\
         <br>\
         <div>\
             <a href="http://www.tolleredshotell.se/Våra%20rum.html" target="_blank">Hemsida</a>\
@@ -166,23 +165,23 @@ $(document).ready(function() {
     var busContent = '\
         <div class="note">Herreslia - Buss 533</div>\
         <div>50-60 min från/till Göteborg, via Floda Station.</div>\
-        <div>Går 1 gång varannan timma</div>\
-        <div>Avgår 15:05 från Göteborg</div>\
-        <div>Sista turen till Göteborg är kl 02:56</div>\
-        <br>\
-        <div>\
-            <a href="https://www.vasttrafik.se/#!/reseinformation/hallplatser/herreslia-lerum/" target="_blank">Hållplats info</a>\
-        </div>';
+        <div>Går 1 gång varannan timma</div>';
+        // <div>Avgår 15:05 från Göteborg</div>\
+        // <div>Sista turen till Göteborg är kl 02:56</div>\
+        // <br>\
+        // <div>\
+        //     <a href="https://www.vasttrafik.se/#!/reseinformation/hallplatser/herreslia-lerum/" target="_blank">Hållplats info</a>\
+        // </div>';
 
     var trainContent = '\
         <div class="note">Floda Station - Västtågen</div>\
         <div>30 min från/till Göteborg.</div>\
-        <div>Går 1 gång/halvtimma på dagen och 1 gång/timma på natten.</div>\
-        <div>Sista turen kl 03:23</div>\
-        <br>\
-        <div>\
-            <a href="https://www.vasttrafik.se/#!/reseinformation/hallplatser/floda-station-lerum/" target="_blank">Hållplats info</a>\
-        </div>';
+        <div>Går 1 gång/halvtimma på dagen och 1 gång/timma på natten.</div>';
+        // <div>Sista turen kl 03:23</div>\
+        // <br>\
+        // <div>\
+        //     <a href="https://www.vasttrafik.se/#!/reseinformation/hallplatser/floda-station-lerum/" target="_blank">Hållplats info</a>\
+        // </div>';
 
     var parkContent = '\
         <div class="note">Stor parkering</div>\
