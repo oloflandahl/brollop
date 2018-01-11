@@ -80,8 +80,8 @@ body.hide-reception #wedding .ceremony-col .info {
   font-size: 0px;
 }
 
-.love-icon.dress-icon img {
+.love-icon.dress-icon img,
+.love-icon.food-icon img {
   width: 32px;
   height: 32px;
-  background-image: url(../images/dress.svg);
 }
