@@ -4,6 +4,7 @@ $(document).ready(function() {
     var showCeremonyOnly = location.search.replace('?', '') === 'vigsel';
     if (showCeremonyOnly) {
         $('body').addClass('hide-reception');
+        $('option.hide-for-ceremony').remove();
     }
 
     /* ======= Scrollspy ======= */
