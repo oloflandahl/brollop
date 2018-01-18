@@ -133,7 +133,7 @@ $(document).ready(function() {
 
     var hotel1Content = '\
         <div class="note">Nääs Fabriker</div>\
-        <div>Dubbelrum fr 1690:-</div>\
+        <div>Dubbelrum fr 1490:-</div>\
         <div>Inkl frukost</div>\
         <br>\
         <div>\
@@ -144,7 +144,8 @@ $(document).ready(function() {
 
     var hotel2Content = '\
         <div class="note">Tollereds Hotell</div>\
-        <div>Dubbelrum fr 1100:-</div>\
+        <div>Dubbelrum fr 1150:-</div>\
+        <div>Inkl frukost</div>\
         <div>Finns även 1-, 3- och 4-bäddsrum</div>\
         <br>\
         <div>Vi har bokat upp alla rummen och här kommer vi övernatta. Uppge våra namn vid bokning.</div>\
