@@ -48,12 +48,12 @@ body.hide-reception .hide-for-ceremony {
   display: none;
 }
 
-body.hide-reception #wedding .ceremony-col {
-  width: 100%;
+.show-for-ceremony {
+  display: none;
 }
 
-body.hide-reception #wedding .ceremony-col .info {
-  text-align: center;
+body.hide-reception .show-for-ceremony {
+  display: block;
 }
 
 .map-section {
