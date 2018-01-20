@@ -321,12 +321,12 @@ $(document).ready(function() {
 
         if (moreGuests) {
             $guestContent.slideDown(); //show
-            $eventsLabel.text('Kommer ni?');
+            $eventsLabel.text('Vi kommer på...');
             cannotComeText = cannotComeText.replace('jag', 'vi');
         } else {
             $guestContent.slideUp(); //hide
             $guestInput.val(''); //Clear data
-            $eventsLabel.text('Kommer du?');
+            $eventsLabel.text('Jag kommer på...');
             cannotComeText = cannotComeText.replace('vi', 'jag');
         }
 
